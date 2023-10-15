@@ -1,0 +1,553 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B820C517-CA0D-47F8-8B54-F894BB3FD366}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineJobPortalProject</RootNamespace>
+    <AssemblyName>OnlineJobPortalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.CommandLine.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.EnvironmentVariables.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Configuration.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Console.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.ConfigurationExtensions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Steeltoe.Common, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Steeltoe.Common.3.2.3\lib\netstandard2.0\Steeltoe.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Steeltoe.Common.Abstractions, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Steeltoe.Common.Abstractions.3.2.3\lib\netstandard2.0\Steeltoe.Common.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Steeltoe.Extensions.Configuration.Abstractions, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Steeltoe.Extensions.Configuration.Abstractions.3.2.3\lib\netstandard2.0\Steeltoe.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Steeltoe.Extensions.Configuration.PlaceholderBase, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Steeltoe.Extensions.Configuration.PlaceholderBase.3.2.3\lib\netstandard2.0\Steeltoe.Extensions.Configuration.PlaceholderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.6.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.7.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.MetadataLoadContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.MetadataLoadContext.4.6.0\lib\netstandard2.0\System.Reflection.MetadataLoadContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\ContactList.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\JobList.aspx" />
+    <Content Include="Admin\NewJob.aspx" />
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\fontawesome-all.min.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\nice-select.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\price_rangs.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\slicknav.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\styles.css" />
+    <Content Include="assets\css\theme.css" />
+    <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\flaticon.html" />
+    <Content Include="assets\fonts\Flaticon.svg" />
+    <Content Include="assets\fonts\themify.svg" />
+    <Content Include="assets\img\about\about_lft.png" />
+    <Content Include="assets\img\about\about_right.png" />
+    <Content Include="assets\img\about\pet_care.png" />
+    <Content Include="assets\img\adapt_icon\1.png" />
+    <Content Include="assets\img\adapt_icon\1.svg" />
+    <Content Include="assets\img\adapt_icon\2.png" />
+    <Content Include="assets\img\adapt_icon\3.png" />
+    <Content Include="assets\img\banner\dog.png" />
+    <Content Include="assets\img\banner\img.png" />
+    <Content Include="assets\img\blog\author.png" />
+    <Content Include="assets\img\blog\blog_4.png" />
+    <Content Include="assets\img\blog\home-blog1.jpg" />
+    <Content Include="assets\img\blog\home-blog2.jpg" />
+    <Content Include="assets\img\blog\learn_about_bg.png" />
+    <Content Include="assets\img\blog\single_blog_1.png" />
+    <Content Include="assets\img\blog\single_blog_2.png" />
+    <Content Include="assets\img\blog\single_blog_3.png" />
+    <Content Include="assets\img\blog\single_blog_4.png" />
+    <Content Include="assets\img\blog\single_blog_5.png" />
+    <Content Include="assets\img\blog\slide_thumb_1.png" />
+    <Content Include="assets\img\comment\comment_1.png" />
+    <Content Include="assets\img\comment\comment_2.png" />
+    <Content Include="assets\img\comment\comment_3.png" />
+    <Content Include="assets\img\elements\a.jpg" />
+    <Content Include="assets\img\elements\a2.jpg" />
+    <Content Include="assets\img\elements\d.jpg" />
+    <Content Include="assets\img\elements\disabled-check.png" />
+    <Content Include="assets\img\elements\disabled-radio.png" />
+    <Content Include="assets\img\elements\f1.jpg" />
+    <Content Include="assets\img\elements\f2.jpg" />
+    <Content Include="assets\img\elements\f3.jpg" />
+    <Content Include="assets\img\elements\f4.jpg" />
+    <Content Include="assets\img\elements\f5.jpg" />
+    <Content Include="assets\img\elements\f6.jpg" />
+    <Content Include="assets\img\elements\f7.jpg" />
+    <Content Include="assets\img\elements\f8.jpg" />
+    <Content Include="assets\img\elements\g1.jpg" />
+    <Content Include="assets\img\elements\g2.jpg" />
+    <Content Include="assets\img\elements\g3.jpg" />
+    <Content Include="assets\img\elements\g4.jpg" />
+    <Content Include="assets\img\elements\g5.jpg" />
+    <Content Include="assets\img\elements\g6.jpg" />
+    <Content Include="assets\img\elements\g7.jpg" />
+    <Content Include="assets\img\elements\g8.jpg" />
+    <Content Include="assets\img\elements\primary-check.png" />
+    <Content Include="assets\img\elements\primary-radio.png" />
+    <Content Include="assets\img\elements\success-check.png" />
+    <Content Include="assets\img\elements\success-radio.png" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\gallery\1.png" />
+    <Content Include="assets\img\gallery\2.png" />
+    <Content Include="assets\img\gallery\3.png" />
+    <Content Include="assets\img\gallery\cv_bg.jpg" />
+    <Content Include="assets\img\gallery\how-applybg.png" />
+    <Content Include="assets\img\hero\about.jpg" />
+    <Content Include="assets\img\hero\h1_hero.jpg" />
+    <Content Include="assets\img\icon\editPencil.png" />
+    <Content Include="assets\img\icon\form.png" />
+    <Content Include="assets\img\icon\job-list1.png" />
+    <Content Include="assets\img\icon\job-list2.png" />
+    <Content Include="assets\img\icon\job-list3.png" />
+    <Content Include="assets\img\icon\job-list4.png" />
+    <Content Include="assets\img\icon\trashIcon.png" />
+    <Content Include="assets\img\logo\form-iocn.jpg" />
+    <Content Include="assets\img\logo\loder.jpg" />
+    <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\logo\logo2_footer.png" />
+    <Content Include="assets\img\logo\select-items-icon.jpg" />
+    <Content Include="assets\img\logo\testimonial.png" />
+    <Content Include="assets\img\offers\1.png" />
+    <Content Include="assets\img\offers\2.png" />
+    <Content Include="assets\img\offers\3.png" />
+    <Content Include="assets\img\our_blog\blog-img1.jpg" />
+    <Content Include="assets\img\post\next.png" />
+    <Content Include="assets\img\post\post_1.png" />
+    <Content Include="assets\img\post\post_10.png" />
+    <Content Include="assets\img\post\post_2.png" />
+    <Content Include="assets\img\post\post_3.png" />
+    <Content Include="assets\img\post\post_4.png" />
+    <Content Include="assets\img\post\post_5.png" />
+    <Content Include="assets\img\post\post_6.png" />
+    <Content Include="assets\img\post\post_7.png" />
+    <Content Include="assets\img\post\post_8.png" />
+    <Content Include="assets\img\post\post_9.png" />
+    <Content Include="assets\img\post\preview.png" />
+    <Content Include="assets\img\prising\1.png" />
+    <Content Include="assets\img\prising\10.png" />
+    <Content Include="assets\img\prising\2.png" />
+    <Content Include="assets\img\prising\3.png" />
+    <Content Include="assets\img\prising\4.png" />
+    <Content Include="assets\img\prising\5.png" />
+    <Content Include="assets\img\prising\6.png" />
+    <Content Include="assets\img\prising\7.png" />
+    <Content Include="assets\img\prising\8.png" />
+    <Content Include="assets\img\prising\9.png" />
+    <Content Include="assets\img\service\1.png" />
+    <Content Include="assets\img\service\2.png" />
+    <Content Include="assets\img\service\3.png" />
+    <Content Include="assets\img\service\footer_bg.jpg" />
+    <Content Include="assets\img\service\service_icon_1.png" />
+    <Content Include="assets\img\service\service_icon_2.png" />
+    <Content Include="assets\img\service\service_icon_3.png" />
+    <Content Include="assets\img\service\service_icon_bg_1.png" />
+    <Content Include="assets\img\service\support-img.jpg" />
+    <Content Include="assets\img\team\1.png" />
+    <Content Include="assets\img\team\2.png" />
+    <Content Include="assets\img\team\3.png" />
+    <Content Include="assets\img\testmonial\1.png" />
+    <Content Include="assets\img\testmonial\testimonial-founder.png" />
+    <Content Include="assets\js\animated.headline.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="assets\js\jquery.form.js" />
+    <Content Include="assets\js\jquery.magnific-popup.js" />
+    <Content Include="assets\js\jquery.nice-select.min.js" />
+    <Content Include="assets\js\jquery.paroller.min.js" />
+    <Content Include="assets\js\jquery.scrollUp.min.js" />
+    <Content Include="assets\js\jquery.slicknav.min.js" />
+    <Content Include="assets\js\jquery.sticky.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\mail-script.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\one-page-nav-min.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\price_rangs.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="User\About.aspx" />
+    <Content Include="User\contact.aspx" />
+    <Content Include="User\Default.aspx" />
+    <Content Include="User\JobListing.aspx" />
+    <Content Include="User\job_details.aspx" />
+    <Content Include="User\Login.aspx" />
+    <Content Include="User\Profile.aspx" />
+    <Content Include="User\Register.aspx" />
+    <Content Include="User\ResumBuild.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ContactList.aspx.cs">
+      <DependentUpon>ContactList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ContactList.aspx.designer.cs">
+      <DependentUpon>ContactList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\JobList.aspx.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\JobList.aspx.designer.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewJob.aspx.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewJob.aspx.designer.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\JobListing.aspx.cs">
+      <DependentUpon>JobListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\JobListing.aspx.designer.cs">
+      <DependentUpon>JobListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\job_details.aspx.cs">
+      <DependentUpon>job_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\job_details.aspx.designer.cs">
+      <DependentUpon>job_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ResumBuild.aspx.cs">
+      <DependentUpon>ResumBuild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ResumBuild.aspx.designer.cs">
+      <DependentUpon>ResumBuild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\Flaticon.eot" />
+    <Content Include="assets\fonts\Flaticon.ttf" />
+    <Content Include="assets\fonts\Flaticon.woff" />
+    <Content Include="assets\fonts\Flaticon.woff2" />
+    <Content Include="assets\fonts\themify.eot" />
+    <Content Include="assets\fonts\themify.ttf" />
+    <Content Include="assets\fonts\themify.woff" />
+    <Content Include="assets\fonts\_flaticon.scss" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assets\scss\_apply-proces.scss" />
+    <Content Include="assets\scss\_blog.scss" />
+    <Content Include="assets\scss\_blog_page.scss" />
+    <Content Include="assets\scss\_bradcam.scss" />
+    <Content Include="assets\scss\_color.scss" />
+    <Content Include="assets\scss\_common.scss" />
+    <Content Include="assets\scss\_contact.scss" />
+    <Content Include="assets\scss\_cv-online.scss" />
+    <Content Include="assets\scss\_elements.scss" />
+    <Content Include="assets\scss\_extend.scss" />
+    <Content Include="assets\scss\_featured-Jobs.scss" />
+    <Content Include="assets\scss\_footer.scss" />
+    <Content Include="assets\scss\_h1-hero.scss" />
+    <Content Include="assets\scss\_headerMenu.scss" />
+    <Content Include="assets\scss\_job_details.scss" />
+    <Content Include="assets\scss\_job_listing.scss" />
+    <Content Include="assets\scss\_mixins.scss" />
+    <Content Include="assets\scss\_overlay.scss" />
+    <Content Include="assets\scss\_pagination.scss" />
+    <Content Include="assets\scss\_recent.scss" />
+    <Content Include="assets\scss\_services.scss" />
+    <Content Include="assets\scss\_services_section.scss" />
+    <Content Include="assets\scss\_support-company.scss" />
+    <Content Include="assets\scss\_team.scss" />
+    <Content Include="assets\scss\_testimonial.scss" />
+    <Content Include="assets\scss\_variables.scss" />
+    <Content Include="User\UserMaster.Master" />
+    <Content Include="Admin\AdminMaster.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resumes\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55551</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55551/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
